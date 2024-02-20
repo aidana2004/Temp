@@ -1,112 +1,290 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>QyzPU</title>
-	<style>
-		main{
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			padding-top: 10vw;
-		}
-		input,button {
-			width: 200px;
-			
-			margin-left: calc(50% - 101px);
-			margin-right: calc(50% - 101px);
-			margin-bottom: 20px;
-		}
-		input{
-			border: 2px solid black;
-			height: 25px;
-			font-size: 20px;
-			font-weight: 400;
-		}
-		button{
-			border: none;
-			height: 28px;
-			font-size: 18px;
-			font-weight: 700;
-			border-radius: 14px;
-			box-shadow: 4px 2px 5px #BB09B0;
-			background-color: #FF64F6;
-			color: white;
-		}
-		p {
-			font-size: 18px;
-			font-weight: 500;
-			margin-bottom: 5px;
-		}
-		.divP{
-			width: 200px;
-			margin-left: calc(50% - 101px);
-			margin-right: calc(50% - 101px);
-			margin-bottom: 20px;
-		}
-		span {
-			font-weight: 700;
-		}
-	</style>
-</head>
-<body>
-	<main>
-		<form id="form">
-			<input id="input"  type="text" name="input" required>
-			<button type="submit">Есептеу</button>
-		</form>
-		<div class="divP">
-			<p>Кельвин <span id="k"></span></p>
-			<p>Фаренгейт <span id="f"></span></p>
-			<p>Цельсий <span id="c"></span></p>
-		</div>
-		<div class="divP">
-			<p>Цельсий шкаласын "c" таңбасымен белгілеңіз</p>
-			<p>Кельвин шкаласын "k" таңбасымен белгілеңіз</p>
-			<p>Фаренгейт шкаласын "f" таңбасымен белгілеңіз</p>
-		</div>
-	</main>
-</body>
-<script>
-	const FormEl = document.getElementById("form");
-	const inputEl = document.getElementById("input");
-	const C = document.getElementById("c");
-	const K = document.getElementById("k");
-	const F = document.getElementById("f");
-	FormEl.addEventListener("submit", showResult);
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        text-decoration-line: overline;
+      }
+      div {
+        display: inline;
+        border-top: 3px solid black;
+        padding-top: 6px;
+      }
+      table {
+        background-color: black;
+        margin-bottom: 50px;
+      }
+      td,
+      tr {
+        background-color: white;
+        padding: 0px 10px;
+        text-align: center;
+      }
+      tr:nth-child(odd) td {
+        background-color: rgba(0, 0, 0, 0.107);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>3-кіріс, 8-шығыс</h2>
+    <table>
+      <tr>
+        <td><h2>A</h2></td>
+        <td><h2>B</h2></td>
+        <td><h2>C</h2></td>
+        <td><h2>A</h2></td>
+        <td><h2>B</h2></td>
+        <td><h2>C</h2></td>
+        <td><h2>A+B</h2></td>
+        <td><h2>B+C</h2></td>
+        <td>
+          <h2>C&<span>B</span></h2>
+        </td>
+        <td>
+          <h2><span>C</span>&B</h2>
+        </td>
+        <td>
+          <h2><span>C</span>&<span>B</span></h2>
+        </td>
+      </tr>
+      <tr>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+      </tr>
+      <tr>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+      </tr>
+      <tr>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+      </tr>
+      <tr>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+      </tr>
+      <tr>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+      </tr>
+      <tr>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+      </tr>
+      <tr>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+      </tr>
+      <tr>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: red">1</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+        <td><h2 style="color: blue">0</h2></td>
+      </tr>
+    </table>
+    <table></table>
+    <h2>8-кіріс, 3-шығыс</h2>
+    <table id="name">
+      <tr>
+        <td><h2></h2></td>
+        <td><h2>A</h2></td>
+        <td><h2>B</h2></td>
+        <td><h2>C</h2></td>
+        <td><h2>D</h2></td>
+        <td><h2>E</h2></td>
+        <td><h2>F</h2></td>
+        <td><h2>G</h2></td>
+        <td><h2>H</h2></td>
+        <td><h2>(A*B)+(E*F)</h2></td>
+        <td>
+          <h2><span>C</span>+D+G*<span>H</span></h2>
+        </td>
+        <td>
+          <h2><span>(B+C)</span>*H</h2>
+        </td>
+      </tr>
+    </table>
+  </body>
 
-	function celcius(v){
-		v=+v;
-		C.innerHTML = `${v}${"c"}`;
-		F.innerHTML = `${Math.round(v*(9/5)+32)}${"f"}`;
-		K.innerHTML = `${v+273}${"k"}`;
-	}
-	function farenheit(v){
-		v=+v;
-		C.innerHTML = `${Math.round((v-32)*5/9)}${"c"}`;
-		F.innerHTML = `${v}${"f"}`;
-		K.innerHTML = `${Math.round((v-32)*5/9)+273}${"k"}`;
-	}
-	function kelvin(v){
-		v=+v;
-		C.innerHTML = `${v-273}${"c"}`;
-		F.innerHTML = `${Math.round((v-273)*9/5)+32}${"f"}`;
-		K.innerHTML = `${v}${"k"}`;
-	}
-	function makeOperation(value){
-		if (value.indexOf("f")>-1){
-			farenheit(value.replace('f',''));
-		} else if(value.indexOf("c")>-1){
-			celcius(value.replace('c',''));
-		}else if(value.indexOf("k")>-1){
-			kelvin(value.replace('k',''));
-		}
-	}
-	function showResult(event){
-		event.preventDefault();
-		makeOperation(inputEl.value)
-		inputEl.value = "";
-	}
-</script>
+  <script>
+    let value = document.getElementById("name");
+
+    function object(a, b, c, d, e, f, g, h, a1, a2, a3) {
+      let Ob = {
+        A: a,
+        B: b,
+        C: c,
+        D: d,
+        E: e,
+        F: f,
+        G: g,
+        H: h,
+        a1: a1,
+        a2: a2,
+        a3: a3,
+      };
+      return Ob;
+    }
+
+    let A = [];
+    for (let i = 0; i < 256; i++) {
+      A.push(object(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+    }
+
+    for (let i = 0; i < 256; i++) {
+      if (i % 256 >= 128) {
+        A[i].A = 1;
+      }
+      if (i % 128 >= 64) {
+        A[i].B = 1;
+      }
+      if (i % 64 >= 32) {
+        A[i].C = 1;
+      }
+      if (i % 32 >= 16) {
+        A[i].D = 1;
+      }
+      if (i % 16 >= 8) {
+        A[i].E = 1;
+      }
+      if (i % 8 >= 4) {
+        A[i].F = 1;
+      }
+      if (i % 4 >= 2) {
+        A[i].G = 1;
+      }
+      if (i % 2 == 1) {
+        A[i].H = 1;
+      }
+      c = A[i].C == 1 ? 0 : 1;
+      h = A[i].H == 1 ? 0 : 1;
+      bc = A[i].C + A[i].B >= 1 ? 0 : 1;
+      A[i].a1 = A[i].A * A[i].B + A[i].E * A[i].F >= 1 ? 1 : 0;
+      A[i].a2 = c + A[i].D + A[i].G * h >= 1 ? 1 : 0;
+      A[i].a3 = bc * A[i].H;
+    }
+    console.log(A);
+
+    for (let i = 0; i < 256; i++) {
+      value.innerHTML =
+        value.innerHTML +
+        `
+          <tr>
+            <td><h2>${i + 1}</h2></td>
+            <td>
+              <h2 style="color: ${A[i].A == 1 ? "red" : "blue"}">${A[i].A}</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].B == 1 ? "red" : "blue"}">${A[i].B}</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].C == 1 ? "red" : "blue"}">${A[i].C}</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].D == 1 ? "red" : "blue"}">${A[i].D}</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].E == 1 ? "red" : "blue"}">${A[i].E}</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].F == 1 ? "red" : "blue"}">${A[i].F}</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].G == 1 ? "red" : "blue"}">${A[i].G}</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].H == 1 ? "red" : "blue"}">${A[i].H}</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].a1 == 1 ? "red" : "blue"}">${
+          A[i].a1
+        }</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].a2 == 1 ? "red" : "blue"}">${
+          A[i].a2
+        }</h2>
+            </td>
+            <td>
+              <h2 style="color: ${A[i].a3 == 1 ? "red" : "blue"}">${
+          A[i].a3
+        }</h2>
+            </td>
+          </tr>
+        `;
+    }
+  </script>
 </html>
